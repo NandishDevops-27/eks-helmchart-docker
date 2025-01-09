@@ -37,12 +37,12 @@ pipeline {
                 }
             }
         }
-//stage('Helm Deploy') {
- //           steps {
-   //             script {
-     //               sh "helm upgrade first --install my-abb-charts --namespace helm-deployment --set image.tag=$BUILD_NUMBER"
-       //         }
-         //   }
-        //}
+         stage('Helm Deploy') {
+            steps {
+               script {
+                  sh "helm upgrade first --install my-abb-charts --namespace helm-deployment --set image.tag=$BUILD_NUMBER"
+                   }
+               }
+          }
     }
 }
